@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525205444) do
+ActiveRecord::Schema.define(version: 20140527185248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,24 @@ ActiveRecord::Schema.define(version: 20140525205444) do
     t.datetime "updated_at"
   end
 
+  create_table "locations", force: true do |t|
+    t.string  "location",  default: "Washington DC"
+    t.integer "latitude"
+    t.integer "longitude"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.string   "url"
+    t.integer  "tree_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "trees", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.string   "species"
-    t.string   "location_url"
+    t.string   "location"
     t.string   "image_data"
     t.string   "description"
     t.string   "setting"
@@ -39,6 +52,9 @@ ActiveRecord::Schema.define(version: 20140525205444) do
     t.boolean  "public"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "latitude"
+    t.integer  "longitude"
+    t.boolean  "gmaps"
   end
 
   create_table "users", force: true do |t|

@@ -1,9 +1,29 @@
-<h1>Tree-Wut?</h1>
-
 <%= link_to "Browse All Trees", trees_path %>
 
+Search for a Tree:
 <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Search for a tree:") %>
+  <%= label_tag(:q, "Enter tree name:") %>
   <%= text_field_tag(:q) %>
+  <%= form_for(@location) do |f| %>
+  <%= label_tag(:location, "Enter location:") %>
+  <%= f.text_field :location %>
+  <% end %>
   <%= submit_tag("Search") %>
 <% end %>
+
+
+
+<%= gmaps4rails(@json) %>
+
+
+
+
+
+
+
+
+
+
+
+
+

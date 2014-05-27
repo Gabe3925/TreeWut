@@ -54,6 +54,8 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.24.0)
+    geocoder (1.2.1)
+    gmaps4rails (1.5.6)
     hike (1.2.3)
     httparty (0.13.1)
       json (~> 1.8)
@@ -150,7 +152,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
-    tzinfo (1.1.0)
+    tzinfo (1.2.0)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
@@ -167,6 +169,8 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker
+  geocoder
+  gmaps4rails
   httparty
   jbuilder (~> 2.0)
   jquery-rails

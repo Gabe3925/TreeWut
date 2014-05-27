@@ -4,11 +4,7 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:create]
 
-  resources :users do
-    resources :favorites
-  end
-
-
+  resources :users, :favorites, :locations
 
   resources :trees do
     resources :favorites
@@ -22,5 +18,8 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
+  get 'trees/search' => 'locations#new'
 
 end
+
+

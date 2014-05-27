@@ -1,40 +1,52 @@
 class TreesController < ApplicationController
-  before_action(:load_user, only: [:new, :create] )
-  before_action(:load_tree, { only: [:edit, :update, :destroy] })
+
 
   def index
-    @trees = current_user.trees
+    @trees = Tree.all
+    @json = @trees.to_gmaps4rails
   end
 
   def new
     @tree = Tree.new
+    @picture = Picture.new
+    @users = User.all
   end
 
   def create
-    @tree = Tree.new(tree_params)
-    @tree.user = @user
-    @tree.location_url = get_location_url(@user, @tree)
+    @tree = Tree.new
+    @tree.name = params[:tree][:name]
+    @tree.location = params[:tree][:location]
     @tree.save
 
-    redirect_to tree_path(@user)
+    @picture = Picture.new
+    @picture.url = params[:URL]
+    @picture.tree = @tree
+    @picture.save
+
+    redirect_to @tree
+  end
+
+  def show
+    @tree = Tree.find(params[:id])
+    @favorite = Favorite.new
+    location = Array.new
+    location << {
+      'description' => @tree.location,
+      'lng' => @tree.longitude,
+      'lat' => @tree.latitude
+    }
+    @gmaps_json = location.to_json
   end
 
   def edit
+    @tree = Tree.find(params[:id])
+
   end
 
   def update
-    @tree.update(tree_params)
-    redirect_to user_path(@tree.user)
+
   end
 
-  def destroy
-    @tree.destroy
-    redirect_to user_path(@tree.user)
-  end
-
-  def search
-    @trees = Tree.where(name: params[:q])
-  end
 
   private
 
@@ -47,8 +59,6 @@ class TreesController < ApplicationController
     params.require(:tree)
   end
 
-  def get_location_url
 
-  end
 
 end
