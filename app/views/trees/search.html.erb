@@ -1,0 +1,8 @@
+<h2>Trees Search:</h2>
+<ul>
+  <% @trees.each do |tree| %>
+    <li>
+      <%= render partial: 'tree', locals: { tree: tree } %>
+    </li>
+  <% end %>
+</ul>

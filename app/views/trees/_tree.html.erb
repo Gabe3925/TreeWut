@@ -1,0 +1,19 @@
+<%= tree.name %>
+
+<% if tree.location_url %>
+  map controls here
+<% end %>
+
+<% if signed_in? %>
+
+  <%= form_tag(tree_favorites_path(tree), method: :post) do %>
+    <%= submit_tag 'Favorites' %>
+  <% end %>
+
+  <%= link_to "Edit Tree", edit_tree_path(tree) %>
+
+  <%= form_for tree, method: 'delete' do |f| %>
+    <%= f.submit "Delete Tree", id: "delete-tree-#{tree.id}" %>
+  <% end %>
+
+<% end %>

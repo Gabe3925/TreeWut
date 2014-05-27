@@ -1,0 +1,9 @@
+<h1>Tree-Wut?</h1>
+
+<%= link_to "Browse All Trees", trees_path %>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for a tree:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
