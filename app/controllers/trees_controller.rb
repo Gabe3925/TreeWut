@@ -43,7 +43,8 @@ class TreesController < ApplicationController
   end
 
   def search
-    @trees = Tree.where(name: params[:q])
+    lower_query = params[:q].downcase
+    @trees = Tree.where("lower(name) like '%#{lower_query}%'")
   end
 
   private #=================================================================================
