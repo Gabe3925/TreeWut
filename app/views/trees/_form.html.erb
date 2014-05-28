@@ -2,14 +2,20 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :location_url %>
-  <%= f.text_field :location_url %>
+  <%= f.label :species %>
+  <%= f.text_field :species %>
+
+  <%= f.label :latitude %>
+  <%= f.text_field :latitude %>
+
+   <%= f.label :longitude %>
+  <%= f.text_field :longitude %>
 
   <%= f.label :description %>
   <%= f.text_field :description %>
 
   <%= f.label :height %>
-  <%= f.number_field :height %>
+  <%= f.text_field :height %>
 
   <%= f.submit "Submit", id: "submit" %>
 <% end %>

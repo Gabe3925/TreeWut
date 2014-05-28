@@ -3,7 +3,7 @@ class Tree < ActiveRecord::Base
   acts_as_gmappable
 
   def gmaps4rails_address
-    "#{name}, #{state}"
+    "#{latitude}, #{longitude}"
   end
 
   geocoded_by :location

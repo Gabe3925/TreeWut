@@ -1,7 +1,15 @@
+<%= link_to "Home Map", root_path %>
 <h1>Trees</h1>
-<% @trees.each do |tree| %>
-<hr>
-  <center><%= tree.name %></center><br>
-  <%= tree.description %><br>
-
-<% end %>
+  <% @trees.each do |tree| %>
+    <ul>
+      <li>
+        #: <%= tree.id %><br>
+        Name: <%= tree.name %><br>
+        Description: <%= tree.description %><br>
+        Lat: <%= tree.latitude %><br>
+        Long: <%= tree.longitude %><br>
+        Height: <%= tree.height %> feet<br>
+        Species: <%= tree.species %><br>
+      </li>
+    </ul>
+  <% end %>

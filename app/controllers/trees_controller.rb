@@ -1,4 +1,5 @@
 class TreesController < ApplicationController
+  before_action :make_map, only: [:index ]
 
 
   def index
@@ -9,13 +10,10 @@ class TreesController < ApplicationController
   def new
     @tree = Tree.new
     @picture = Picture.new
-    @users = User.all
   end
 
   def create
-    @tree = Tree.new
-    @tree.name = params[:tree][:name]
-    @tree.location = params[:tree][:location]
+    @tree = Tree.new(tree_params)
     @tree.save
 
     @picture = Picture.new
@@ -23,8 +21,10 @@ class TreesController < ApplicationController
     @picture.tree = @tree
     @picture.save
 
-    redirect_to @tree
+    redirect_to trees_path
   end
+
+
 
   def show
     @tree = Tree.find(params[:id])
@@ -48,6 +48,12 @@ class TreesController < ApplicationController
   end
 
 
+
+
+
+
+
+
   private
 
   def load_tree
@@ -56,7 +62,15 @@ class TreesController < ApplicationController
 
 
   def tree_params
-    params.require(:tree)
+    params.require(:tree).permit(:name, :species, :latitude, :longitude, :description, :height)
+  end
+
+  def make_map
+    @trees = Tree.all
+    @hash = Gmaps4rails.build_markers(@trees) do |tree, marker|
+      marker.lat tree.latitude
+      marker.lng tree.longitude
+    end
   end
 
 

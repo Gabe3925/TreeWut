@@ -1,5 +1,15 @@
 <%= link_to "Browse All Trees", trees_path %>
 
+<% if logged_in? %>
+
+
+
+  <%= link_to "Create a Tree", new_tree_path %>
+
+
+
+<% end %>
+
 Search for a Tree:
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Enter tree name:") %>
@@ -12,8 +22,7 @@ Search for a Tree:
 <% end %>
 
 
-
-<%= gmaps4rails(@json) %>
+<div id="map" style="width: 800px; height: 400px;"></div>
 
 
 
