@@ -65,13 +65,15 @@ class TreesController < ApplicationController
     params.require(:tree).permit(:name, :species, :latitude, :longitude, :description, :height)
   end
 
-  def make_map
-    @trees = Tree.all
-    @hash = Gmaps4rails.build_markers(@trees) do |tree, marker|
-      marker.lat tree.latitude
-      marker.lng tree.longitude
-    end
-  end
+  #THIS IS THE MAP FOR SHOWING IN INDIVIDUAL TREE PROFILES but build_markers is broken and hanging up.
+  #TO RE-ENABLE, recomment 'before' at top. see above.
+  #def make_map
+   @trees = Tree.all
+   @hash = Gmaps4rails.build_markers(@trees) do |tree, marker|
+     marker.lat tree.latitude
+     marker.lng tree.longitude
+   end
+
 
 
 
