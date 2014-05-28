@@ -1,9 +1,9 @@
 class TreesController < ApplicationController
   before_action :make_map, only: [:index ]
+  before_action :find_tree, only: [:show, :edit, :update, :destroy]
 
 
   def index
-
   end
 
   def new
@@ -15,18 +15,10 @@ class TreesController < ApplicationController
     @tree = Tree.new(tree_params)
     @tree.save
 
-    @picture = Picture.new
-    @picture.url = params[:URL]
-    @picture.tree = @tree
-    @picture.save
-
     redirect_to trees_path
   end
 
-
-
   def show
-    @tree = Tree.find(params[:id])
     @favorite = Favorite.new
     location = Array.new
     location << {
@@ -38,30 +30,34 @@ class TreesController < ApplicationController
   end
 
   def edit
-    @tree = Tree.find(params[:id])
-
   end
 
   def update
-
+    @tree.update(tree_params)
+    redirect_to @tree
   end
 
+  def destroy
+    @tree.destroy
+    redirect_to trees_path
+  end
 
+  def search
+    @trees = Tree.where(name: params[:q])
+  end
 
-
-
-
-
-
-  private
+  private #=================================================================================
 
   def load_tree
     return @tree = Tree.find_by(id: params[:user_id])
   end
 
+  def find_tree
+    @tree = Tree.find(params[:id])
+  end
 
   def tree_params
-    params.require(:tree).permit(:name, :species, :latitude, :longitude, :description, :height)
+    params.require(:tree).permit(:name, :species, :latitude, :longitude, :description, :height, :image_data)
   end
 
   def make_map

@@ -1,21 +1,24 @@
 <%= form_for [@tree] do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br>
 
   <%= f.label :species %>
-  <%= f.text_field :species %>
+  <%= f.text_field :species %><br>
 
-  <%= f.label :latitude %>
-  <%= f.text_field :latitude %>
+  <%= f.label :latitude %> (XX.000000)
+  <%= f.text_field :latitude %><br>
 
-   <%= f.label :longitude %>
-  <%= f.text_field :longitude %>
+   <%= f.label :longitude %> (XX.000000)
+  <%= f.text_field :longitude %><br>
 
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description %><br>
 
-  <%= f.label :height %>
-  <%= f.text_field :height %>
+  <%= f.label :height_in_feet %>
+  <%= f.text_field :height %><br>
+
+  <%= f.label :Enter_image_URL %>
+  <%= f.text_field :image_data %><br>
 
   <%= f.submit "Submit", id: "submit" %>
 <% end %>

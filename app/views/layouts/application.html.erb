@@ -16,20 +16,23 @@
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
 
 <%= javascript_include_tag 'application' %>
+
 <script>
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers([
+
     {
-      "lat": 0,
-      "lng": 0,
-      "picture": {
-        "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-        "width":  36,
-        "height": 36
-      },
-      "infowindow": "hello!"
+      "lat": 38.6372,
+      "lng": -77.738
+    },
+
+    {
+      "lat": 39.6372,
+      "lng": -67.738
     }
+
+
   ]);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
@@ -39,5 +42,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   </body>
 </html>
 
+
+<!-- data for getting to the hash: markers = handler.addMarkers(<%=raw @hash.to_json %>);   -->
 
 

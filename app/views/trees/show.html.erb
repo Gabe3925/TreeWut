@@ -1,0 +1,26 @@
+<%= link_to "All Trees", trees_path %>
+
+<br/>
+
+<h1><%= @tree.name %></h1>
+
+Picture<img src="<%= @tree.image_data %>" width="300px" height="300px"><br>
+Description <%= @tree.description %><br>
+
+
+
+<% if logged_in? %>
+
+<%= form_tag(tree_favorites_path(@tree), method: :post) do %>
+    <%= submit_tag 'Favorites' %>
+  <% end %>
+
+<%= link_to "Edit Tree", edit_tree_path %>
+
+<%= form_for @tree, method: 'delete' do |f| %>
+  <%= f.submit "Delete Tree", id: "destroy" %>
+<% end %>
+
+
+
+<% end %>

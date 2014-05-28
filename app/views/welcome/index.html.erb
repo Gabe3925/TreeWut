@@ -1,14 +1,10 @@
 <%= link_to "Browse All Trees", trees_path %>
 
 <% if logged_in? %>
-
-
-
   <%= link_to "Create a Tree", new_tree_path %>
-
-
-
 <% end %>
+
+<hr>
 
 Search for a Tree:
 <%= form_tag("/search", method: "get") do %>
@@ -18,13 +14,13 @@ Search for a Tree:
 <% end %>
 
 
-<div id="map" style="width: 800px; height: 400px;"></div>
-<script>
-markers = handler.addMarkers(<%=raw @hash.to_json %>);
-</script>
 
 
 
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
 
 
 

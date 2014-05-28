@@ -1,10 +1,7 @@
-<%= tree.name %>
 
-<% if tree.location_url %>
-  map controls here
-<% end %>
+<%= link_to tree.name, tree %>
 
-<% if signed_in? %>
+<% if logged_in? %>
 
   <%= form_tag(tree_favorites_path(tree), method: :post) do %>
     <%= submit_tag 'Favorites' %>
@@ -17,3 +14,9 @@
   <% end %>
 
 <% end %>
+
+
+
+
+
+

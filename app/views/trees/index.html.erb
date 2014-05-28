@@ -4,7 +4,7 @@
     <ul>
       <li>
         #: <%= tree.id %><br>
-        Name: <%= tree.name %><br>
+        Name: <%= link_to tree.name, tree %><br>
         Description: <%= tree.description %><br>
         Lat: <%= tree.latitude %><br>
         Long: <%= tree.longitude %><br>
@@ -13,3 +13,5 @@
       </li>
     </ul>
   <% end %>
+
+
