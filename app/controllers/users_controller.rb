@@ -18,20 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @favorites = Favorite.find(params[:id])
-      #@hash = Gmaps4rails.build_markers(@favorites) do |favorite, marker|
-      #  @favorite = favorite
-      #  marker.lat favorite.tree_id.latitude
-      #  marker.lng favorite.tree_id.longitude
-      #  marker.infowindow render_to_string(:partial => "/welcome/info_window", :locals => { :object => tree}).gsub(/\n/, '')
-      #  marker.picture({
-      #              :url => "http://img4.wikia.nocookie.net/__cb20100610115010/frontierville/images/thumb/a/a8/Oak_Tree-icon.png/40px-Oak_Tree-icon.png",
-      #              :width   => 80,
-      #              :height  => 80
-      #      })
-      #  #marker.infowindow tree.description
-#
-      #end
+
   end
 
   def edit
