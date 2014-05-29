@@ -12,7 +12,7 @@ Description <%= @tree.description %><br>
 <% if logged_in? %>
 
 <%= form_tag(tree_favorites_path(@tree), method: :post) do %>
-    <%= submit_tag 'Favorites' %>
+    <%= submit_tag 'Add to Favorites' %>
   <% end %>
 
 <%= link_to "Edit Tree", edit_tree_path %>
@@ -21,6 +21,8 @@ Description <%= @tree.description %><br>
   <%= f.submit "Delete Tree", id: "destroy" %>
 <% end %>
 
+alternative edit button:
+<a href="<%= @tree.id %>/edit"><button>Edit</button></a>
 
 
 <% end %>

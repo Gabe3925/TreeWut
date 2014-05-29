@@ -1,5 +1,14 @@
 <h1><%= @user.name %></h1>
+<p><%= link_to "Edit", edit_user_path(@user) %> Details or Password.</p>
 
-<p><%= @user.email %></p>
+<p>EMAIL: <%= @user.email %></p>
 
-<p><%= link_to "Edit", edit_user_path(@user) %></p>
+<%= @favorites.tree_id %>
+
+
+
+
+MY FAVORITES:
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>

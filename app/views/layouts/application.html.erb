@@ -17,9 +17,13 @@
 
 <%= javascript_include_tag 'application' %>
 
+
+
+
 <script>
 handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+handler.buildMap({ provider: {
+    }, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers(
 
     <%=raw @hash.to_json %>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
 
 
+
 # Some specified custom routes:
 
   get '/search' => 'trees#search'
