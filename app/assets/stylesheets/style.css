@@ -1,0 +1,155 @@
+html {
+  background: url('rainforest.jpg') #000000 no-repeat center center fixed;
+  background-size: cover;
+  color:#FFF;
+  padding: none;
+}
+
+body {
+  font: 25px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  padding: none;
+  margin: 0;
+}
+
+div.header{
+
+
+}
+
+div.wrapper{
+  margin: auto;
+  max-width: 90%;
+  padding: 0;
+  width: 100%;
+}
+
+div.content{
+  text-align: center;
+
+}
+
+div.nav_block{
+
+}
+
+div.nav_links{
+  text-align: left;
+}
+
+div.text_block{
+  background-color: #000; filter:alpha(opacity=60); opacity:.6;
+  box-shadow: 1px 2px 1px #888888;
+  border:2px solid white;
+  border-radius:10px;
+  font: 17px/21px 'Alegreya Sans SC', sans-serif;
+  margin: 20px 25%;
+
+}
+
+div.footer{
+  background-color: #000; filter:alpha(opacity=60); opacity:.6;
+  font: 12px 'Alegreya Sans SC', sans-serif;
+  height: 120px;
+  margin-top: 100px;
+  width: 100%;
+}
+
+div#map {
+  border: 3px solid #3399CC;
+  border-radius: 20px;
+  margin: 10px auto;
+
+}
+
+/*   BUTTONS AND FIELDS BELOW:  */
+
+/*THIS IS AN INPUT FIELD*/
+input {
+  background-color: #FFF;
+  box-shadow: 1px 2px 1px #888888;
+  border:2px solid white;
+  border-radius:10px;
+  font: 17px/21px 'Arimo', bold;
+  height: 30px;
+  margin: 10px;
+  text-align: center;
+  width: 230px;
+}
+
+
+/*THIS IS A BUTTON*/
+input[type=submit]{
+  background: #3399CC; /* old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #3399CC 100%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#3399CC)); /* webkit */
+  border:2px solid white;
+  border-radius:10px;
+  height: 40px;
+  margin: 20px;
+  padding: 2px;
+  width: 200px;
+
+}
+
+
+
+
+/*   NEW TREE AND USER FORMS    */
+
+div.new-user-form {
+  width:300px;
+  height: 500px;
+  text-align: right;
+}
+
+div.new-tree-form {
+  width:300px;
+  height: 500px;
+  text-align: right;
+}
+
+
+
+h1 {
+  font:30px;
+  display:inline;
+  margin: 0;
+  text-align: center;
+}
+
+ul {
+  border-radius: 20px;
+  background-color: #000; filter:alpha(opacity=60); opacity:.6;
+  font: 12px 'Alegreya Sans SC', sans-serif;
+  padding-top: 10px;
+  text-align: left;
+  margin: 30px 30%;
+
+}
+ul li{
+  font-size: 21px;
+  list-style: none;
+  padding-bottom: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: #3399CC;
+}
+a:hover {
+  text-decoration:underline;
+}
+
+
+img.logo {
+
+  box-shadow: 1px 1px 1px  1px #888888;
+  border-radius:20px;
+  margin-top:50px;
+  padding: none;
+  width: 30px;
+
+}
+
+

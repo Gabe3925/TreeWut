@@ -1,14 +1,41 @@
-TREE-WUT LOGO HERE
+<div class="logo">
+  <%= image_tag("tree_wut.png", :alt => "Tree-Wut Logo") %>
+</div>
+<h1> ALL THE TREES YOU'LL NEED!</h1>
 
-<% if logged_in? %>
+<div class="header">
+  <div class="nav_block">
+    <% if logged_in? %>
 
-  <%= form_for :session, url: logout_path, method: 'delete' do |f| %>
-    Logged in as <%= link_to current_user.name, current_user %>
-    <%= f.submit "Log out", id: 'logout' %>
-  <% end %>
+      <div class="log">
+        <%= form_for :session, url: logout_path, method: 'delete' do |f| %>
+          Logged in as <%= link_to current_user.name, current_user %>
+          <%= f.submit "Log out", id: 'logout' %>
+        <% end %>
+      </div>
 
-<% else %>
+       <div class="home">
+         <%= link_to "Home Map", root_path %>
+       </div>
 
-  <%= link_to "Log In", login_path %> | <%= link_to "Sign up", signup_path %>
+       <div class="input"><%= link_to "Browse All Trees", trees_path %></div>
 
-<% end %>
+       <div class="input"><%= link_to "Create a Tree", new_tree_path %></div>
+
+    <% else %>
+
+      <div class="log">
+        <%= link_to "Log In", login_path %> | <%= link_to "Sign up", signup_path %>
+      </div>
+
+      <div class="home">
+        <%= link_to "Home Map", root_path %>
+      </div>
+
+      <div class="input"><%= link_to "Browse All Trees", trees_path %></div>
+
+    <% end %>
+  </div>
+
+</div>
+

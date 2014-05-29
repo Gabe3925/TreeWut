@@ -1,28 +1,23 @@
-<%= link_to "All Trees", trees_path %>
+<div class="content">
+  <div class="nav_links">
+    <%= link_to "All Trees", trees_path %><br>
+  </div>
 
-<br/>
+  <h1><%= @tree.name %></h1><br>
+  <img src="<%= @tree.image_data %>" width="400px"><br>
+  <div class="text_block">
+    <p>Description: </p> <%= @tree.description %><br>
+  </div>
+  <div class="nav_block">
+    <% if logged_in? %>
+      <%= form_tag(tree_favorites_path(@tree), method: :post) do %>
+        <%= submit_tag 'Add to Favorites' %>
+      <% end %>
+      <a href="<%= @tree.id %>/edit"><button class="input">Edit</button></a>
+      <%= form_for @tree, method: 'delete' do |f| %>
+        <%= f.submit "Delete Tree", id: "destroy" %>
+      <% end %>
+    <% end %>
+  </div>
 
-<h1><%= @tree.name %></h1>
-
-Picture<img src="<%= @tree.image_data %>" width="300px" height="300px"><br>
-Description <%= @tree.description %><br>
-
-
-
-<% if logged_in? %>
-
-<%= form_tag(tree_favorites_path(@tree), method: :post) do %>
-    <%= submit_tag 'Add to Favorites' %>
-  <% end %>
-
-<%= link_to "Edit Tree", edit_tree_path %>
-
-<%= form_for @tree, method: 'delete' do |f| %>
-  <%= f.submit "Delete Tree", id: "destroy" %>
-<% end %>
-
-alternative edit button:
-<a href="<%= @tree.id %>/edit"><button>Edit</button></a>
-
-
-<% end %>
+</div>

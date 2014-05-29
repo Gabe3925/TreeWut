@@ -1,28 +1,17 @@
-<%= link_to "Browse All Trees", trees_path %>
+<div class="content">
 
-<% if logged_in? %>
-  <%= link_to "Create a Tree", new_tree_path %>
-<% end %>
+  <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Enter tree name:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
 
-<hr>
+  <!-- MAP GOES HERE -->
+  <div class="map">
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
 
-Search for a Tree:
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Enter tree name:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
-
-
-
-
-
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-
-
 
 
 

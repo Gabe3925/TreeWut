@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TreeWut</title>
+  <title>Tree-Wut!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="description" content="Create, Read, Update and Destroy Trees!">
+  <meta name="keywords" content="Trees, Tree-Mapping, Social-Arborism, Nature-Activism">
+  <meta name="author" content="Gabe Snyder 2014">
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,800italic|Arimo:400,700italic' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
+    <div class="wrapper">
 
     <%= render 'common/logout' %>
     <%= yield %>
@@ -35,7 +40,12 @@ handler.buildMap({ provider: {
 });
 </script>
 
+  </div>
+  <div class="footer">
+    (c) 2014
+  <div>
   </body>
+
 </html>
 
 

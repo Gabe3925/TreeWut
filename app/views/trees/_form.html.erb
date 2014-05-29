@@ -1,24 +1,26 @@
-<%= form_for [@tree] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+<div class="new_tree_form">
+  <%= form_for [@tree] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
 
-  <%= f.label :species %>
-  <%= f.text_field :species %><br>
+    <%= f.label :species %>
+    <%= f.text_field :species %><br>
 
-  <%= f.label :latitude %> (XX.000000)
-  <%= f.text_field :latitude %><br>
+    <%= f.label :latitude %> (XX.000000)
+    <%= f.text_field :latitude %><br>
 
-   <%= f.label :longitude %> (XX.000000)
-  <%= f.text_field :longitude %><br>
+     <%= f.label :longitude %> (XX.000000)
+    <%= f.text_field :longitude %><br>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %><br>
+    <%= f.label :description %>
+    <%= f.text_field :description %><br>
 
-  <%= f.label :height_in_feet %>
-  <%= f.text_field :height %><br>
+    <%= f.label :height_in_feet %>
+    <%= f.text_field :height %><br>
 
-  <%= f.label :Enter_image_URL %>
-  <%= f.text_field :image_data %><br>
+    <%= f.label :Enter_image_URL %>
+    <%= f.text_field :image_data %><br>
 
-  <%= f.submit "Submit", id: "submit" %>
-<% end %>
+    <%= f.submit "Submit", id: "submit" %>
+  <% end %>
+</div>
