@@ -16,26 +16,3 @@
 //  require tree
 
 
-
-handler = Gmaps.build('Google');
-handler.buildMap({
-    provider: {
-      disableDefaultUI: true
-      // pass in other Google Maps API options here
-    },
-    internal: {
-      id: 'map'
-    }
-  },
-  function(){
-    markers = handler.addMarkers([
-
-      <%=raw @hash.to_json %>
-
-    ]);
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  }
-);
-
-//doesnt appear to be working?????????????????????????
