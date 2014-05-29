@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'rails_12factor'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -30,7 +30,7 @@ gem 'httparty'
 gem 'bcrypt', '~> 3.1.7'
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'rails_12factor'
+
 
 # Use unicorn as the app server
 # gem 'unicorn'
