@@ -74,4 +74,4 @@ which appears on a users profile page.
 
 
 ### ERD (entity–relationship diagram):
-![](/Users/gabe/Desktop/midterm_app_erd.jpg?raw=true)
+![](midterm_app_erd.jpg?raw=true)
