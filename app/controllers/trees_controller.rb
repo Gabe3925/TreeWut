@@ -13,9 +13,11 @@ class TreesController < ApplicationController
 
   def create
     @tree = Tree.new(tree_params)
-    @tree.save
-
+    if @tree.save
     redirect_to trees_path
+    else
+      render :new
+    end
   end
 
   def show
