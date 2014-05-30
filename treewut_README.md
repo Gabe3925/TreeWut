@@ -6,7 +6,7 @@
 
 ### Overview:
 
-**Tree-Wut** is an application which allows users to visualize the notable trees of the world by map, and through the creation of 'profile'-like pages for trees. 
+**Tree-Wut** is an application which allows users to visualize the notable trees of the world by map, and through the creation of 'profile'-like pages for trees.
 
 **Anyone** can see tree-profiles created and mapped on this app., but only registered users can create, edit or delete tree profiles.
 
@@ -29,20 +29,16 @@ Lat and Long coordinates are passed into the map through the index method found 
 Search will search through every trees' database entry :name, and returns every entry with matching characters, irrespective of case.
 
 
-
-
-
-
 ### Technologies Used:
 
 * Ruby 2.1.1
 * Ruby on Rails 4.1.1
-* Gmaps4rails gem (https://github.com/apneadiving/Google-Maps-for-Rails) 
+* Gmaps4rails gem (https://github.com/apneadiving/Google-Maps-for-Rails)
 * PostgreSQL Database
 * Authentication & Authorization from scratch using bcrypt gem (http://bcrypt-ruby.rubyforge.org/)
 * Testing using using rspec gem (https://github.com/rspec/rspec-rails)
 * Capybara gem (https://github.com/jnicklas/capybara)
-* Shoulda Matchers gem (https://github.com/thoughtbot/shoulda-matchers) 
+* Shoulda Matchers gem (https://github.com/thoughtbot/shoulda-matchers)
 
 ### "User-Stories" Completed:
 
@@ -68,9 +64,6 @@ which appears on a users profile page.
 * Ability to allow users to choose/pick a trees location off a map.
 * Ability to have the picker-map set a trees Lat & Long. Coords.
 * Ability to search for a trees species, location or height.
-
-
-
 
 
 ### ERD (entity–relationship diagram):
