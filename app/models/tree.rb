@@ -26,16 +26,16 @@ class Tree < ActiveRecord::Base
 
 
   # Validates Tree Latitude-- Low
-  validates :latitude, numericality: { greater_than_or_equal_to: -90 }
+  validates :latitude, numericality: { greater_than_or_equal_to: -75 }
 
   # Validates Tree Latitude-- High
-  validates :latitude, numericality: { less_than_or_equal_to: 90 }
+  validates :latitude, numericality: { less_than_or_equal_to: 75 }
 
    # Validates Tree Longitude-- Low
-  validates :longitude, numericality: { greater_than_or_equal_to: -180 }
+  validates :longitude, numericality: { greater_than_or_equal_to: -175 }
 
    # Validates Tree Longitude-- High
-  validates :longitude, numericality: { less_than_or_equal_to: 180 }
+  validates :longitude, numericality: { less_than_or_equal_to: 175 }
 
   # Validates Tree Height-- Low
   validates :height, numericality: { greater_than_or_equal_to: 0 }
